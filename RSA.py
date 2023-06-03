@@ -1,6 +1,6 @@
 # Encryption alphabet
 
-alphabet_e = {'a': '00',
+alphabet_letters_list = {'a': '00',
 
               'b': '01',
 
@@ -56,7 +56,7 @@ alphabet_e = {'a': '00',
 
 # Decryption alphabet
 
-alphabet_d = {n: c for c, n in alphabet_e.items()}
+alphabet_d = {n: c for c, n in alphabet_letters_list.items()}
 
 
 # Euclidian Algorithm: Find GCD of two numbers
@@ -143,7 +143,7 @@ def encrypt_message(msg, N, e):
 
         # Create list of encrypted characters
 
-        encrypted_chars = [encrypt(alphabet_e[char], N, e) for char in chars]
+        encrypted_chars = [encrypt(alphabet_letters_list[char], N, e) for char in chars]
 
         # Add encrypted word to list
 
@@ -153,7 +153,7 @@ def encrypt_message(msg, N, e):
 
     # Join encrypted words with space characters
 
-    encrypted = f" {encrypt(alphabet_e[' '], N, e)} ".join(encrypted)
+    encrypted = f" {encrypt(alphabet_letters_list[' '], N, e)} ".join(encrypted)
 
     return encrypted
 
@@ -192,7 +192,7 @@ def options():
     1 - Encrypt message in terminal\n\
     2 - Decrypt message in terminal\n")
 
-    # User interface
+# User interface
 
 
 while True:
@@ -271,7 +271,7 @@ while True:
 
         d = int(input("Enter private key d: "))
 
-        print()
+        print("")
 
         # Get encrypted message from user
 
@@ -297,14 +297,14 @@ while True:
 
     # Option to exit
 
-    exit = input("Make another selection?\n\
+    Exit = input("Make another selection?\n\
             'Y' to continue\n\
             any other key to exit\n").upper()
 
     print()
 
 # Make another selection
-    if exit == "Y":
+    if Exit == "Y":
         continue
 
  #Exit
